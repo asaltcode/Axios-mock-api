@@ -18,10 +18,10 @@ const UserCard = ({name, username, email, phone, website, company, business, nav
            <ListGroup className="list-group-flush">
                <ListGroup.Item><b>Email :</b> {email}</ListGroup.Item>
                <ListGroup.Item><b>Phone :</b> {phone}</ListGroup.Item>
-               <ListGroup.Item><b>website : </b> <a style={{textDecoration: "none" }} href={website}>{website}</a>
+               {/* <ListGroup.Item><b>website : </b> <a style={{textDecoration: "none" }} href={website}>{website}</a>
                </ListGroup.Item>
                <ListGroup.Item><b>Campany : </b>{company} </ListGroup.Item>
-               <ListGroup.Item><b>Business : </b>{business}</ListGroup.Item>
+               <ListGroup.Item><b>Business : </b>{business}</ListGroup.Item> */}
            </ListGroup>
        </Card>
     </>
