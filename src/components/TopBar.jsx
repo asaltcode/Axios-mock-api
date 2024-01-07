@@ -9,7 +9,14 @@ import { FaUserEdit } from "react-icons/fa";
 import { FaUserPlus } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa";
 
+import { useLocation } from 'react-router-dom';
+
 const TopBar = () => {
+  
+  let location = useLocation()
+  let active = "activeNav";
+  
+  console.log(location.pathname)
     let navigate = useNavigate()
   return (
     <Navbar expand="lg" data-bs-theme="dark" bg='dark' className="bg-body-tertiary">
@@ -18,9 +25,9 @@ const TopBar = () => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link onClick={()=>navigate("/")}><AiFillHome className='navIcon' /> Home</Nav.Link>
-          <Nav.Link onClick={()=>navigate("/dashboard")}><MdSpaceDashboard className='navIcon' /> Dashboard</Nav.Link>          
-          <Nav.Link onClick={()=>navigate("/create-user")}><FaUserPlus className='navIcon' /> Create User</Nav.Link>
+          <Nav.Link className={`${location.pathname === '/'? "navItem" : ""}`} onClick={()=>navigate("/")}><AiFillHome className={`navIcon ${location.pathname === '/'? active : ""}`} /> Home</Nav.Link>
+          <Nav.Link className={`${location.pathname === '/dashboard'? "navItem" : ""}`} onClick={()=>navigate("/dashboard")}><MdSpaceDashboard className={`navIcon ${location.pathname === '/dashboard'? active : ""}`} /> Dashboard</Nav.Link>          
+          <Nav.Link className={`${location.pathname === '/create-user'? "navItem" : ""}`} onClick={()=>navigate("/create-user")}><FaUserPlus className={`navIcon ${location.pathname === '/create-user'? active : ""}`} /> Create User</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>

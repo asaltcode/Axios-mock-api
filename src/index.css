@@ -15,8 +15,15 @@ body{
     color: white;
     padding-bottom: 5px;
     font-size: 20px;
-    filter: drop-shadow(0 0 10px );
+    filter: drop-shadow(0 0 10px);
 }
+
+.navItem, .activeNav{
+    color: aqua !important;
+    text-shadow:  0 0 10px aqua, 0 0 20px aqua;
+}
+
+
 .homeWrapper{
    margin: 15px;
    display: flex;
@@ -69,7 +76,7 @@ body{
     transition: .4s;
 }
 .UserBox:hover  img{
-    filter: drop-shadow(1px 1px 20px blue);
+    filter: drop-shadow(1px 1px 20px rgb(255, 123, 246));
 }
 
 .img-box{
